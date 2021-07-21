@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(60deg, #5478D6, #C28B9E);
+}
+
+.clock {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #090909;
+    border-radius: 10px;
+    padding: 3rem;
+    box-shadow: 0 15px 25px 0 rgba(0, 0, 0, .3);
+}
+
+.clock .time {
+    color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock .time .symbol{
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+.clock .time .name {
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 100;
+    letter-spacing: .2rem;
+}
+
+.clock .separator {
+    width: 1rem;
+    height: 1rem;
+    background-color: #FAFAFA;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.separator::after {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    width: 100%;
+    height: 100%;
+    background-color: #FAFAFA;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 660px) {
+    html {
+        font-size: 50%;
+    }
+    .clock {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    html {
+        font-size: 37.5%;
+    }
+    .clock {
+        max-width: 80%;
+        flex-wrap: wrap;
+        border: 3px solid rgba(255, 255, 255, .3);
+        border-radius: 40%;
+        position: relative;
+    }
+    .clock::after {
+        border: 2px solid #C28B9E;
+        border-radius: 40%;
+        position: absolute;
+        width: 90%;
+        height: 90%;
+        content: '';
+    }
+
+    .clock .time {
+        margin-bottom: 8rem;
+    }
+
+    .clock .separator {
+        margin-bottom: 10rem;
+    }
+
+    .clock .day {
+        min-width: 100%;
+        margin-bottom: 4rem;
+        margin-top: 2rem;
+    }
+
+    .clock .day-remove{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .clock {
+        max-width: 100%;
+    }
+}
